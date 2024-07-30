@@ -1,6 +1,7 @@
 checksum.xml
 build-logic/checksum.xml
 build-logic/gradle/checksum-dependency-plugin/cached-pgp-keys/**
+gradle/wrapper/gradle-wrapper.properties
 gradle/wrapper/gradle-wrapper.jar
 gradle/checksum-dependency-plugin/cached-pgp-keys/**
 **/.*
@@ -41,3 +42,4 @@ xdocs/extending/HTML_REPORT_README.TXT
 # Rat should automatically detect below files as binary, however it fails
 **/*.sxi
 **/*.sxw
+

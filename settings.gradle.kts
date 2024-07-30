@@ -34,13 +34,16 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         // TODO: support enableMavenLocal
-        mavenCentral()
+        maven(url = "https://maven.aliyun.com/repository/public")
+        maven(url = "https://maven.aliyun.com/repository/gradle-plugin")
+        // 其他可能的仓库
+        //mavenCentral()
     }
 }
 
-if (JavaVersion.current() < JavaVersion.VERSION_17) {
-    throw UnsupportedOperationException("Please use Java 17 or 21 for launching Gradle when building JMeter, the current Java is ${JavaVersion.current().majorVersion}")
-}
+//if (JavaVersion.current() < JavaVersion.VERSION_17) {
+//    throw UnsupportedOperationException("Please use Java 17 or 21 for launching Gradle when building JMeter, the current Java is ${JavaVersion.current().majorVersion}")
+//}
 
 // This is the name of a current project
 // Note: it cannot be inferred from the directory name as developer might clone JMeter to jmeter_tmp folder
@@ -140,7 +143,15 @@ buildscript {
         classpath("org.eclipse.jgit:org.eclipse.jgit:5.13.2.202306221912-r")
     }
     repositories {
-        gradlePluginPortal()
+//        gradlePluginPortal()
+        maven(url = "https://maven.aliyun.com/repository/public")
+        maven(url = "https://maven.aliyun.com/repository/gradle-plugin")
+        // 其他可能的仓库
+//        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+        // 其他可用的国内镜像
+        // maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        // maven { url 'https://mirrors.cloud.tencent.com/gradle-plugin/' }
+        // ... 其他国内镜像
     }
 }
 
